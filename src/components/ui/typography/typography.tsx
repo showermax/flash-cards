@@ -16,7 +16,9 @@ type PropsType = {
     | 'overline'
     | 'link1'
     | 'link2'
+  useMyTag?: any
 } & ComponentPropsWithoutRef<'div'>
-export const Typography = ({ variant = 'large', ...rest }: PropsType) => {
-  return <div className={`${style[variant]}`} {...rest} />
+export const Typography = ({ variant = 'large', useMyTag, ...rest }: PropsType) => {
+  const Tag = useMyTag || 'div'
+  return <Tag className={`${style[variant]}`} {...rest} />
 }
