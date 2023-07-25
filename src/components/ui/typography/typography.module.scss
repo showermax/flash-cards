@@ -1,0 +1,64 @@
+body {
+  color: var(--color-dark-900);
+  background-color: var(--color-light-100);
+}
+
+@mixin item($size, $height, $weight) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $height;
+}
+
+.large {
+  @include item(var(--font-size-xxl), var(--line-height-l), var(--font-weight-bold));
+}
+
+.h1 {
+  @include item(var(--font-size-xl), var(--line-height-l), var(--font-weight-bold));
+}
+
+.h2 {
+  @include item(var(--font-size-l), var(--line-height-m), var(--font-weight-bold));
+}
+
+.h3 {
+  @include item(var(--font-size-m), var(--line-height-m), var(--font-weight-bold));
+}
+
+.body1 {
+  @include item(var(--font-size-m), var(--line-height-m), var(--font-weight-regular));
+}
+
+.subtitle1 {
+  @include item(var(--font-size-m), var(--line-height-m), var(--font-weight-bold));
+}
+
+.body2 {
+  @include item(var(--font-size-s), var(--line-height-m), var(--font-weight-regular));
+}
+
+.subtitle2 {
+  @include item(var(--font-size-s), var(--line-height-m), var(--font-weight-bold));
+}
+
+.overline {
+  @include item(var(--font-size-xs), var(--line-height-s), var(--font-weight-bold));
+}
+
+.caption {
+  @include item(var(--font-size-xs), var(--line-height-s), var(--font-weight-regular));
+}
+
+.link1 {
+  @include item(var(--font-size-s), var(--line-height-m), var(--font-weight-regular));
+
+  color: var(--color-info-500);
+  text-decoration: underline;
+}
+
+.link2 {
+  @include item(var(--font-size-xs), var(--line-height-s), var(--font-weight-regular));
+
+  color: var(--color-info-500);
+  text-decoration: underline;
+}

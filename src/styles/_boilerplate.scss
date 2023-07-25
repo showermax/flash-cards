@@ -32,10 +32,32 @@ a:visited {
 body {
   margin: 0;
   padding: 0;
-
   font-family: var(--font-family-primary), sans-serif;
   line-height: var(--line-height-m);
   color: var(--color-light-100);
-
   background-color: var(--color-dark-900);
+}
+
+.large {
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-l);
+}
+
+h1 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-l);
+}
+
+h2 {
+  font-size: var(--font-size-l);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-m);
+}
+
+h3 {
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-m);
 }
