@@ -1,4 +1,6 @@
 @mixin btn($bkgr, $fontSize, $fontWeight, $color) {
+  cursor: pointer;
+
   display: inline-block;
 
   padding: 6px 28px;
@@ -14,6 +16,7 @@
   outline: none;
 
   &:disabled {
+    cursor: default;
     opacity: 0.5;
   }
 }
@@ -26,6 +29,8 @@
     var(--color-light-100)
   );
 
+  box-shadow: 0 4px 18px 0 rgb(140 97 255 / 35%);
+
   &:active {
     background-color: var(--color-accent-700);
   }
@@ -34,7 +39,7 @@
     background-color: var(--color-accent-300);
   }
 
-  &:focus {
+  &:focus-visible {
     padding: 4px 26px;
     background-color: var(--color-accent-500);
     border: 2px solid var(--color-info-700);
@@ -42,15 +47,78 @@
 }
 
 .secondary {
-  background-color: green;
+  @include btn(
+    var(--color-dark-300),
+    var(--font-size-m),
+    var(--font-weight-bold),
+    var(--color-light-100)
+  );
+
+  box-shadow: 0 4px 4px 0 rgb(77 86 96 / 13%);
+
+  &:active:enabled {
+    background-color: var(--color-dark-500);
+  }
+
+  &:hover:enabled {
+    background-color: var(--color-dark-100);
+  }
+
+  &:focus-visible {
+    padding: 4px 26px;
+    background-color: var(--color-dark-300);
+    border: 2px solid var(--color-info-700);
+  }
 }
 
 .tertiary {
-  background-color: blue;
+  @include btn(
+    var(--color-dark-300),
+    var(--font-size-m),
+    var(--font-weight-bold),
+    var(--color-accent-500)
+  );
+
+  background: transparent;
+  outline: 1px solid var(--color-accent-500);
+
+  &:active:enabled {
+    background-color: var(--color-accent-900);
+  }
+
+  &:hover:enabled {
+    background-color: var(--color-dark-500);
+  }
+
+  &:focus-visible {
+    padding: 4px 26px;
+    background: transparent;
+    outline: 2px solid var(--color-info-700);
+  }
 }
 
 .link {
-  background-color: yellow;
+  @include btn(
+    var(--color-dark-300),
+    var(--font-size-m),
+    var(--font-weight-bold),
+    var(--color-accent-500)
+  );
+
+  background: transparent;
+
+  &:active:enabled {
+    color: var(--color-accent-700);
+  }
+
+  &:hover:enabled {
+    color: var(--color-accent-300);
+  }
+
+  &:focus-visible {
+    border: 2px solid var(--color-info-700);
+    border-radius: 130px;
+  }
 }
 
 .fullWidth {
