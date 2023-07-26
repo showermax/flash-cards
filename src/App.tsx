@@ -1,5 +1,4 @@
-import { Button } from './components'
-import { Typography } from './components/ui/typography/typography.tsx'
+import { Button, Checkbox } from './components'
 
 export function App() {
   return (
@@ -7,13 +6,8 @@ export function App() {
       <Button variant="primary" as={'a'} href={'google.com'}>
         As link button
       </Button>
-      <Button variant="secondary" href={'http://google.com'}>
-        {' '}
-        Just a button{' '}
-      </Button>
-      <Typography useMyTag={'a'} href={'http://google.com'}>
-        HI Im TYpography{' '}
-      </Typography>
+
+      <Checkbox />
     </div>
   )
 }
