@@ -11,14 +11,14 @@ type FormValues = {
 export const LoginForm = () => {
   const { register, handleSubmit } = useForm<FormValues>()
 
-  const onSubmit = (data: FormValues) => {
+  const onSubmit = handleSubmit((data: FormValues) => {
     console.log(data)
-  }
+  })
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input {...register('email')} />
-      <input {...register('password')} />
+    <form onSubmit={onSubmit}>
+      <input style={{ color: 'black' }} {...register('email')} />
+      <input style={{ color: 'black' }} {...register('password')} />
       <Button type="submit">Submit</Button>
     </form>
   )
