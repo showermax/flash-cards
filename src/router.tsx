@@ -5,6 +5,8 @@ import {
   RouteObject,
   RouterProvider,
 } from 'react-router-dom'
+import { useGetDecksQuery } from './services/baseApi.ts'
+import { Decks } from './pages/decks.tsx'
 
 const publicRoutes: RouteObject[] = [
   {
@@ -16,7 +18,7 @@ const publicRoutes: RouteObject[] = [
 const privateRoutes: RouteObject[] = [
   {
     path: '/',
-    element: <div>hello</div>,
+    element: <Decks />,
   },
 ]
 
@@ -34,5 +36,7 @@ function PrivateRoutes() {
 }
 
 export const Router = () => {
+  const result = useGetDecksQuery()
+  console.log(result)
   return <RouterProvider router={router} />
 }
