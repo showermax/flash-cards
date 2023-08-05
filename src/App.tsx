@@ -1,13 +1,11 @@
-import { Button, Checkbox } from './components'
+import { Router } from './router.tsx'
+import { Provider } from 'react-redux'
+import { store } from './services/store.ts'
 
 export function App() {
   return (
-    <div>
-      <Button variant="primary" as={'a'} href={'google.com'}>
-        As link button
-      </Button>
-
-      <Checkbox />
-    </div>
+    <Provider store={store}>
+      <Router />
+    </Provider>
   )
 }
